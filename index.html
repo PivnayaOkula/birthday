@@ -560,41 +560,49 @@ const items = [
 ];
 
 let reservations = {};
+let isSyncing = false;
 
 function fmt(n) { return n.toLocaleString('ru-RU') + ' ₽'; }
 
 async function loadReservations() {
-  if (FIREBASE_URL === 'https://pivnayaokula-default-rtdb.firebaseio.com/') {
+  if (FIREBASE_URL === 'PASTE_YOUR_FIREBASE_URL_HERE') {
     document.getElementById('wishlist-container').innerHTML =
       '<div class="wishlist-error">⚠️ Firebase ещё не подключён. Замени PASTE_YOUR_FIREBASE_URL_HERE на твой URL из Firebase.</div>';
     return;
   }
+  if (isSyncing) return;
   try {
     const res = await fetch(FIREBASE_URL + '/reservations.json');
-    reservations = (await res.json()) || {};
-  } catch(e) {
-    reservations = {};
-  }
-  render();
+    const data = await res.json();
+    if (!isSyncing) {
+      reservations = data && typeof data === 'object' ? data : {};
+      render();
+    }
+  } catch(e) {}
 }
 
 async function book(id, name) {
+  isSyncing = true;
   reservations[id] = name;
   render();
   try {
     await fetch(FIREBASE_URL + '/reservations/' + id + '.json', {
       method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(name)
     });
   } catch(e) {}
+  isSyncing = false;
 }
 
 async function cancel(id) {
+  isSyncing = true;
   delete reservations[id];
   render();
   try {
     await fetch(FIREBASE_URL + '/reservations/' + id + '.json', { method: 'DELETE' });
   } catch(e) {}
+  isSyncing = false;
 }
 
 function render() {
