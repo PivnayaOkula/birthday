@@ -28,7 +28,6 @@
     overflow-x: hidden;
   }
 
-  /* GRAIN TEXTURE */
   body::before {
     content: '';
     position: fixed;
@@ -39,7 +38,6 @@
     opacity: 0.6;
   }
 
-  /* HERO */
   .hero {
     min-height: 100vh;
     display: flex;
@@ -65,7 +63,6 @@
   }
 
   .hero-tag {
-    font-family: 'Jost', sans-serif;
     font-size: 0.75rem;
     font-weight: 500;
     letter-spacing: 0.3em;
@@ -88,11 +85,7 @@
     animation: fadeUp 0.8s ease 0.4s forwards;
   }
 
-  .hero-title span {
-    display: block;
-    color: var(--fire);
-    -webkit-text-stroke: 0px;
-  }
+  .hero-title span { display: block; color: var(--fire); }
 
   .hero-subtitle {
     font-family: 'Unbounded', sans-serif;
@@ -113,15 +106,9 @@
     animation: fadeUp 0.8s ease 0.8s forwards;
   }
 
-  .hero-date-line {
-    width: 60px;
-    height: 1px;
-    background: var(--fire);
-    opacity: 0.5;
-  }
+  .hero-date-line { width: 60px; height: 1px; background: var(--fire); opacity: 0.5; }
 
   .hero-date-text {
-    font-family: 'Jost', sans-serif;
     font-size: 1.1rem;
     font-weight: 300;
     letter-spacing: 0.15em;
@@ -141,26 +128,10 @@
     animation: fadeUp 1s ease 1.2s forwards;
   }
 
-  .scroll-hint span {
-    font-size: 0.65rem;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
+  .scroll-hint span { font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--muted); }
+  .scroll-arrow { width: 1px; height: 40px; background: linear-gradient(to bottom, var(--fire), transparent); animation: scrollAnim 2s ease infinite; }
 
-  .scroll-arrow {
-    width: 1px;
-    height: 40px;
-    background: linear-gradient(to bottom, var(--fire), transparent);
-    animation: scrollAnim 2s ease infinite;
-  }
-
-  /* SECTIONS */
-  section {
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 5rem 2rem;
-  }
+  section { max-width: 860px; margin: 0 auto; padding: 5rem 2rem; }
 
   .section-label {
     font-size: 0.7rem;
@@ -171,13 +142,7 @@
     margin-bottom: 2rem;
   }
 
-  /* LOCATION */
-  .location-block {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    align-items: start;
-  }
+  .location-block { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
 
   .location-address {
     font-family: 'Unbounded', sans-serif;
@@ -188,12 +153,7 @@
     margin-bottom: 1.5rem;
   }
 
-  .location-meta {
-    color: var(--muted);
-    font-size: 0.95rem;
-    line-height: 1.8;
-    margin-bottom: 2rem;
-  }
+  .location-meta { color: var(--muted); font-size: 0.95rem; line-height: 1.8; margin-bottom: 2rem; }
 
   .map-btn {
     display: inline-flex;
@@ -213,44 +173,15 @@
     cursor: pointer;
   }
 
-  .map-btn:hover {
-    background: var(--fire);
-    color: var(--smoke);
-  }
-
+  .map-btn:hover { background: var(--fire); color: var(--smoke); }
   .map-btn svg { width: 16px; height: 16px; }
 
-  .map-visual {
-    aspect-ratio: 1;
-    border-radius: 4px;
-    overflow: hidden;
-    position: relative;
-    border: 1px solid #3A2E22;
-  }
+  .map-visual { aspect-ratio: 1; border-radius: 4px; overflow: hidden; position: relative; border: 1px solid #3A2E22; }
+  .map-visual iframe { width: 100%; height: 100%; border: none; display: block; filter: sepia(0.4) contrast(1.1) brightness(0.85); }
 
-  .map-visual iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-    display: block;
-    filter: sepia(0.4) contrast(1.1) brightness(0.85);
-  }
+  .divider { max-width: 860px; margin: 0 auto; padding: 0 2rem; border-top: 1px solid #2C2419; }
 
-  /* DIVIDER */
-  .divider {
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    border-top: 1px solid #2C2419;
-  }
-
-  /* PROGRAM */
-  .program-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1.5rem;
-    margin-top: 1rem;
-  }
+  .program-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin-top: 1rem; }
 
   .program-item {
     padding: 1.75rem;
@@ -276,11 +207,7 @@
 
   .program-item:hover::before { transform: scaleX(1); }
 
-  .program-icon {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    display: block;
-  }
+  .program-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
 
   .program-name {
     font-family: 'Unbounded', sans-serif;
@@ -290,19 +217,9 @@
     margin-bottom: 0.5rem;
   }
 
-  .program-desc {
-    font-size: 0.88rem;
-    color: var(--muted);
-    line-height: 1.7;
-  }
+  .program-desc { font-size: 0.88rem; color: var(--muted); line-height: 1.7; }
 
-  /* DRINKS */
-  .drinks-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    margin-top: 1.5rem;
-  }
+  .drinks-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
 
   .drink-pill {
     padding: 0.5rem 1.2rem;
@@ -310,15 +227,10 @@
     border-radius: 100px;
     font-size: 0.85rem;
     color: var(--muted);
-    font-weight: 400;
   }
 
-  .drink-pill.highlight {
-    border-color: var(--ember);
-    color: var(--ember);
-  }
+  .drink-pill.highlight { border-color: var(--ember); color: var(--ember); }
 
-  /* ALERT */
   .alcohol-note {
     margin-top: 2rem;
     padding: 1.25rem 1.75rem;
@@ -330,107 +242,210 @@
     line-height: 1.7;
   }
 
-  .alcohol-note strong {
+  .alcohol-note strong { color: var(--ember); font-weight: 500; }
+
+  /* WISHLIST */
+  .wishlist-intro {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+    line-height: 1.7;
+  }
+
+  .wishlist-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .wish-item {
+    border: 1px solid #2C2419;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: border-color 0.3s ease;
+  }
+
+  .wish-item.booked {
+    border-color: #1E2C1A;
+    opacity: 0.7;
+  }
+
+  .wish-main {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1.25rem 1.5rem;
+  }
+
+  .wish-emoji { font-size: 1.75rem; flex-shrink: 0; width: 2.5rem; text-align: center; }
+
+  .wish-info { flex: 1; min-width: 0; }
+
+  .wish-name {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--cream);
+    margin-bottom: 0.25rem;
+    line-height: 1.4;
+  }
+
+  .wish-item.booked .wish-name { color: var(--muted); text-decoration: line-through; }
+
+  .wish-price {
+    font-size: 0.85rem;
     color: var(--ember);
     font-weight: 500;
   }
 
-  /* WISHLIST */
-  .wishlist-block {
+  .wish-item.booked .wish-price { color: var(--muted); }
+
+  .wish-booked-by {
+    font-size: 0.8rem;
+    color: #4A7C3F;
+    margin-top: 0.2rem;
+  }
+
+  .wish-actions { display: flex; align-items: center; gap: 0.75rem; flex-shrink: 0; }
+
+  .wish-link {
     display: flex;
     align-items: center;
-    gap: 3rem;
-    padding: 3rem;
-    border: 1px solid #2C2419;
-    border-radius: 4px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .wishlist-block::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse at 80% 50%, rgba(232, 104, 26, 0.08), transparent 60%);
-    pointer-events: none;
-  }
-
-  .wishlist-num {
-    font-family: 'Unbounded', sans-serif;
-    font-size: clamp(4rem, 10vw, 7rem);
-    font-weight: 900;
-    color: #2A1E14;
-    line-height: 1;
-    flex-shrink: 0;
-    user-select: none;
-  }
-
-  .wishlist-content h2 {
-    font-family: 'Unbounded', sans-serif;
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: var(--cream);
-    margin-bottom: 0.75rem;
-    line-height: 1.3;
-  }
-
-  .wishlist-content p {
-    font-size: 0.9rem;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: 1px solid #3A2E22;
+    border-radius: 2px;
     color: var(--muted);
-    line-height: 1.7;
-    margin-bottom: 1.5rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
   }
 
-  /* FOOTER */
-  footer {
+  .wish-link:hover { border-color: var(--fire); color: var(--fire); }
+  .wish-link svg { width: 14px; height: 14px; }
+
+  .btn-book {
+    padding: 0.55rem 1.25rem;
+    background: transparent;
+    border: 1px solid var(--fire);
+    color: var(--fire);
+    font-family: 'Jost', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 500;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+  }
+
+  .btn-book:hover { background: var(--fire); color: var(--smoke); }
+
+  .btn-cancel {
+    padding: 0.55rem 1.25rem;
+    background: transparent;
+    border: 1px solid #3A2E22;
+    color: var(--muted);
+    font-family: 'Jost', sans-serif;
+    font-size: 0.82rem;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+  }
+
+  .btn-cancel:hover { border-color: #E84040; color: #E84040; }
+
+  .wish-form {
+    border-top: 1px solid #2C2419;
+    padding: 1rem 1.5rem;
+    display: none;
+    align-items: center;
+    gap: 0.75rem;
+    background: rgba(255,255,255,0.02);
+  }
+
+  .wish-form.open { display: flex; }
+
+  .wish-form input {
+    flex: 1;
+    padding: 0.6rem 1rem;
+    background: #0D0A08;
+    border: 1px solid #3A2E22;
+    border-radius: 2px;
+    color: var(--cream);
+    font-family: 'Jost', sans-serif;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.2s ease;
+  }
+
+  .wish-form input:focus { border-color: var(--fire); }
+  .wish-form input::placeholder { color: #4A3C2E; }
+
+  .btn-confirm {
+    padding: 0.6rem 1.25rem;
+    background: var(--fire);
+    border: none;
+    color: var(--smoke);
+    font-family: 'Jost', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    white-space: nowrap;
+  }
+
+  .btn-confirm:hover { opacity: 0.85; }
+
+  .btn-close-form {
+    padding: 0.6rem 0.9rem;
+    background: transparent;
+    border: 1px solid #3A2E22;
+    color: var(--muted);
+    font-family: 'Jost', sans-serif;
+    font-size: 0.85rem;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+
+  .wishlist-loading {
     text-align: center;
-    padding: 4rem 2rem;
-    color: #3A2E22;
-    font-size: 0.8rem;
-    letter-spacing: 0.1em;
+    color: var(--muted);
+    font-size: 0.9rem;
+    padding: 2rem;
   }
 
-  /* FLAMES SVG */
-  .flames {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: min(600px, 90%);
-    opacity: 0.15;
+  .wishlist-error {
+    padding: 1.25rem 1.75rem;
+    border-left: 2px solid #E84040;
+    background: rgba(232, 64, 64, 0.06);
+    border-radius: 0 4px 4px 0;
+    font-size: 0.9rem;
+    color: #E84040;
+    line-height: 1.7;
   }
 
-  /* ANIMATIONS */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
+  footer { text-align: center; padding: 4rem 2rem; color: #3A2E22; font-size: 0.8rem; letter-spacing: 0.1em; }
 
-  @keyframes scrollAnim {
-    0%, 100% { opacity: 0.3; transform: scaleY(0.5); transform-origin: top; }
-    50% { opacity: 1; transform: scaleY(1); }
-  }
+  .flames { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: min(600px, 90%); opacity: 0.15; animation: flicker 3s ease infinite; }
 
-  @keyframes flicker {
-    0%, 100% { transform: scaleX(1) scaleY(1); opacity: 0.15; }
-    33% { transform: scaleX(1.02) scaleY(0.98); opacity: 0.18; }
-    66% { transform: scaleX(0.99) scaleY(1.01); opacity: 0.13; }
-  }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes scrollAnim { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
+  @keyframes flicker { 0%, 100% { opacity: 0.15; } 50% { opacity: 0.18; } }
 
-  .flames { animation: flicker 3s ease infinite; }
-
-  /* RESPONSIVE */
   @media (max-width: 640px) {
     .location-block { grid-template-columns: 1fr; }
     .map-visual { aspect-ratio: 4/3; }
-    .wishlist-block { flex-direction: column; gap: 1.5rem; }
-    .wishlist-num { font-size: 4rem; }
+    .wish-main { gap: 0.75rem; padding: 1rem; }
+    .wish-emoji { font-size: 1.4rem; width: 2rem; }
+    .wish-form { flex-wrap: wrap; }
+    .wish-form input { min-width: 0; }
   }
 </style>
 </head>
 <body>
 
-<!-- HERO -->
 <div class="hero">
   <svg class="flames" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <defs>
@@ -444,11 +459,7 @@
   </svg>
 
   <p class="hero-tag">Ежегодное — Выпуск 2026</p>
-
-  <h1 class="hero-title">
-    Шашлычное<br>
-    <span>Пати</span>
-  </h1>
+  <h1 class="hero-title">Шашлычное<br><span>Пати</span></h1>
   <p class="hero-subtitle">у Толяна</p>
 
   <div class="hero-date">
@@ -463,34 +474,24 @@
   </div>
 </div>
 
-<!-- LOCATION -->
 <div class="divider"></div>
 <section>
   <p class="section-label">Место встречи</p>
   <div class="location-block">
     <div>
       <h2 class="location-address">Беседка у пруда</h2>
-      <p class="location-meta">
-        Совхозная улица, 19к1<br>
-        Химки, Россия
-      </p>
+      <p class="location-meta">Совхозная улица, 19к1<br>Химки, Россия</p>
       <a href="https://yandex.ru/maps/org/besedka/105883900237?si=4fxwpftvxgrvhr2tkbp9ku1b78" target="_blank" class="map-btn">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
         Открыть на карте
       </a>
     </div>
     <div class="map-visual">
-      <iframe
-        src="https://yandex.ru/maps/10758/khimki/?ll=37.375290%2C55.889340&z=16&pt=37.375290,55.889340,pm2rdl"
-        title="Карта: Беседка у пруда, Химки"
-        loading="lazy"
-        allowfullscreen
-      ></iframe>
+      <iframe src="https://yandex.ru/maps/10758/khimki/?ll=37.375290%2C55.889340&z=16&pt=37.375290,55.889340,pm2rdl" title="Карта: Беседка у пруда, Химки" loading="lazy" allowfullscreen></iframe>
     </div>
   </div>
 </section>
 
-<!-- PROGRAM -->
 <div class="divider"></div>
 <section>
   <p class="section-label">Программа вечера</p>
@@ -531,26 +532,137 @@
   </div>
 </section>
 
-<!-- WISHLIST -->
 <div class="divider"></div>
 <section>
   <p class="section-label">Вишлист</p>
-  <div class="wishlist-block">
-    <div class="wishlist-num" aria-hidden="true">♡</div>
-    <div class="wishlist-content">
-      <h2>Уже знаешь, что подарить?</h2>
-      <p>Толян собрал список желаний — заглядывай, вдруг что-то приглянётся.</p>
-      <a href="https://followish.io/mywishlist/iefgx3nnyzeuwn" target="_blank" class="map-btn">
-        Открыть вишлист
-        <svg style="width:14px;height:14px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-      </a>
-    </div>
+  <p class="wishlist-intro">Забронируй подарок — чтобы никто не купил то же самое 🎁</p>
+  <div id="wishlist-container">
+    <div class="wishlist-loading">Загружаем список...</div>
   </div>
 </section>
 
-<footer>
-  © Ежегодное шашлычное пати у Толяна &nbsp;·&nbsp; 2026
-</footer>
+<footer>© Ежегодное шашлычное пати у Толяна &nbsp;·&nbsp; 2026</footer>
+
+<script>
+const FIREBASE_URL = 'PASTE_YOUR_FIREBASE_URL_HERE';
+
+const items = [
+  { id: 'item1',  emoji: '☕', name: 'Рожковая кофеварка DeLonghi EC685',              price: 18000, url: 'https://ozon.ru/t/1E4zdgw' },
+  { id: 'item2',  emoji: '🧢', name: 'Прикольный Снэпбэк',                              price: 2000,  url: null },
+  { id: 'item3',  emoji: '🖱️', name: 'Коврик для мышки большой',                       price: 700,   url: 'https://ozon.ru/t/q4YvX8b' },
+  { id: 'item4',  emoji: '📽️', name: 'Профессия кинооператор. Секретные техники Голливуда', price: 1200, url: 'https://ozon.ru/t/oftOk18' },
+  { id: 'item5',  emoji: '🛏️', name: '3-сезонный спальный мешок-одеяло 220×95',        price: 3000,  url: 'https://ozon.ru/t/7WyHCZd' },
+  { id: 'item6',  emoji: '🤖', name: 'Tuya Умный Zigbee робот-палец',                   price: 1500,  url: 'https://ozon.ru/t/6d5VzXK' },
+  { id: 'item7',  emoji: '⌨️', name: 'Игровая клавиатура Royal Kludge R75',             price: 5000,  url: 'https://ozon.ru/t/sSdel4S' },
+  { id: 'item8',  emoji: '🎭', name: 'Фиеста. Карнавал мёртвых',                        price: 2490,  url: 'https://hobbygames.ru/fiesta-karnaval-mjortvih?utm_source=followish' },
+  { id: 'item9',  emoji: '💡', name: 'Свет для телефона студийный',                     price: 2400,  url: 'https://ozon.ru/t/QiL5jbX' },
+  { id: 'item10', emoji: '📖', name: 'Джеймс Кэмерон. Иллюстрированная биография',     price: 2000,  url: 'https://ozon.ru/t/QiL54KI' },
+];
+
+let reservations = {};
+
+function fmt(n) { return n.toLocaleString('ru-RU') + ' ₽'; }
+
+async function loadReservations() {
+  if (FIREBASE_URL === 'https://pivnayaokula-default-rtdb.firebaseio.com/') {
+    document.getElementById('wishlist-container').innerHTML =
+      '<div class="wishlist-error">⚠️ Firebase ещё не подключён. Замени PASTE_YOUR_FIREBASE_URL_HERE на твой URL из Firebase.</div>';
+    return;
+  }
+  try {
+    const res = await fetch(FIREBASE_URL + '/reservations.json');
+    reservations = (await res.json()) || {};
+  } catch(e) {
+    reservations = {};
+  }
+  render();
+}
+
+async function book(id, name) {
+  reservations[id] = name;
+  render();
+  try {
+    await fetch(FIREBASE_URL + '/reservations/' + id + '.json', {
+      method: 'PUT',
+      body: JSON.stringify(name)
+    });
+  } catch(e) {}
+}
+
+async function cancel(id) {
+  delete reservations[id];
+  render();
+  try {
+    await fetch(FIREBASE_URL + '/reservations/' + id + '.json', { method: 'DELETE' });
+  } catch(e) {}
+}
+
+function render() {
+  const container = document.getElementById('wishlist-container');
+  container.innerHTML = '<div class="wishlist-grid">' +
+    items.map(item => {
+      const bookedBy = reservations[item.id];
+      const isBooked = !!bookedBy;
+      return `
+        <div class="wish-item ${isBooked ? 'booked' : ''}" id="card-${item.id}">
+          <div class="wish-main">
+            <span class="wish-emoji">${item.emoji}</span>
+            <div class="wish-info">
+              <div class="wish-name">${item.name}</div>
+              <div class="wish-price">${fmt(item.price)}</div>
+              ${isBooked ? `<div class="wish-booked-by">✓ Забронировал: ${bookedBy}</div>` : ''}
+            </div>
+            <div class="wish-actions">
+              ${item.url ? `<a href="${item.url}" target="_blank" class="wish-link" title="Посмотреть товар"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>` : ''}
+              ${isBooked
+                ? `<button class="btn-cancel" onclick="cancel('${item.id}')">Отменить</button>`
+                : `<button class="btn-book" onclick="openForm('${item.id}')">Забронировать</button>`
+              }
+            </div>
+          </div>
+          ${!isBooked ? `
+          <div class="wish-form" id="form-${item.id}">
+            <input type="text" id="input-${item.id}" placeholder="Твоё имя" maxlength="40" />
+            <button class="btn-confirm" onclick="confirmBook('${item.id}')">Подтвердить</button>
+            <button class="btn-close-form" onclick="closeForm('${item.id}')">✕</button>
+          </div>` : ''}
+        </div>`;
+    }).join('') + '</div>';
+}
+
+function openForm(id) {
+  const form = document.getElementById('form-' + id);
+  if (form) {
+    form.classList.add('open');
+    document.getElementById('input-' + id).focus();
+  }
+}
+
+function closeForm(id) {
+  const form = document.getElementById('form-' + id);
+  if (form) form.classList.remove('open');
+}
+
+function confirmBook(id) {
+  const input = document.getElementById('input-' + id);
+  const name = (input ? input.value : '').trim();
+  if (!name) { input && input.focus(); return; }
+  book(id, name);
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') {
+    const active = document.activeElement;
+    if (active && active.id && active.id.startsWith('input-')) {
+      const id = active.id.replace('input-', '');
+      confirmBook(id);
+    }
+  }
+});
+
+loadReservations();
+setInterval(loadReservations, 15000);
+</script>
 
 </body>
 </html>
