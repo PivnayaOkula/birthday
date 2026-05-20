@@ -75,7 +75,7 @@
 
   .hero-title {
     font-family: 'Unbounded', sans-serif;
-    font-size: clamp(3rem, 12vw, 9rem);
+    font-size: clamp(2.2rem, 10vw, 9rem);
     font-weight: 900;
     line-height: 0.9;
     letter-spacing: -0.02em;
@@ -618,12 +618,12 @@ function render() {
             <div class="wish-info">
               <div class="wish-name">${item.name}</div>
               <div class="wish-price">${fmt(item.price)}</div>
-              ${isBooked ? `<div class="wish-booked-by">✓ Забронировал: ${bookedBy}</div>` : ''}
+              ${isBooked ? `<div class="wish-booked-by">✓ Забронировано</div>` : ''}
             </div>
             <div class="wish-actions">
               ${item.url ? `<a href="${item.url}" target="_blank" class="wish-link" title="Посмотреть товар"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>` : ''}
               ${isBooked
-                ? `<button class="btn-cancel" onclick="cancel('${item.id}')">Отменить</button>`
+                ? `<button class="btn-cancel" onclick="openCancelForm('${item.id}')">Отменить</button>`
                 : `<button class="btn-book" onclick="openForm('${item.id}')">Забронировать</button>`
               }
             </div>
@@ -633,7 +633,12 @@ function render() {
             <input type="text" id="input-${item.id}" placeholder="Твоё имя" maxlength="40" />
             <button class="btn-confirm" onclick="confirmBook('${item.id}')">Подтвердить</button>
             <button class="btn-close-form" onclick="closeForm('${item.id}')">✕</button>
-          </div>` : ''}
+          </div>` : `
+          <div class="wish-form" id="cancel-form-${item.id}">
+            <input type="text" id="cancel-input-${item.id}" placeholder="Введи своё имя для отмены" maxlength="40" />
+            <button class="btn-confirm" onclick="confirmCancel('${item.id}')">Подтвердить</button>
+            <button class="btn-close-form" onclick="closeCancelForm('${item.id}')">✕</button>
+          </div>`}
         </div>`;
     }).join('') + '</div>';
 }
@@ -658,12 +663,44 @@ function confirmBook(id) {
   book(id, name);
 }
 
+function openCancelForm(id) {
+  const form = document.getElementById('cancel-form-' + id);
+  if (form) {
+    form.classList.add('open');
+    document.getElementById('cancel-input-' + id).focus();
+  }
+}
+
+function closeCancelForm(id) {
+  const form = document.getElementById('cancel-form-' + id);
+  if (form) form.classList.remove('open');
+}
+
+function confirmCancel(id) {
+  const input = document.getElementById('cancel-input-' + id);
+  const name = (input ? input.value : '').trim().toLowerCase();
+  const bookedBy = (reservations[id] || '').toLowerCase();
+  if (!name) { input && input.focus(); return; }
+  if (name !== bookedBy) {
+    input.style.borderColor = '#E84040';
+    input.placeholder = 'Имя не совпадает, попробуй ещё раз';
+    input.value = '';
+    setTimeout(() => { input.style.borderColor = ''; input.placeholder = 'Введи своё имя для отмены'; }, 2000);
+    return;
+  }
+  cancel(id);
+}
+
+
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Enter') {
     const active = document.activeElement;
-    if (active && active.id && active.id.startsWith('input-')) {
-      const id = active.id.replace('input-', '');
-      confirmBook(id);
+    if (active && active.id) {
+      if (active.id.startsWith('cancel-input-')) {
+        confirmCancel(active.id.replace('cancel-input-', ''));
+      } else if (active.id.startsWith('input-')) {
+        confirmBook(active.id.replace('input-', ''));
+      }
     }
   }
 });
